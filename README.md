@@ -1,9 +1,10 @@
-# Install  
-  git clone git://github.com/sprinkles/dotvim ~/.vim
+Elizabeth's Vim Config
 
-# Link it up  
-  ln -s ~/.vim/vimrc ~/.vimrc
+## Install  
+git clone git://github.com/sprinkles/dotvim ~/.vim
 
-# Fetch submodules (if I use them)  
-  cd ~/.vim 
-  git submodule update --init
+## Link it up  
+ln -s ~/.vim/vimrc ~/.vimrc
+
+## Vundle 
+run :BundleInstall

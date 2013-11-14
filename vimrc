@@ -1,11 +1,5 @@
-" Following lines added by drush vimrc-install on Thu, 06 Jun 2013 15:12:13 +0000.
 set nocompatible
-call pathogen#infect('/Users/elizabeth/.drush/vimrc/bundle')
-call pathogen#infect('/Users/elizabeth/.vim/bundle')
-" End of vimrc-install additions.
 
-execute pathogen#infect()
-filetype off
 syntax on
 filetype plugin indent on
 
@@ -23,7 +17,9 @@ Bundle 'gmarik/vundle'
 " "
 " original repos on GitHub
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
