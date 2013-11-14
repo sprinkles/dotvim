@@ -1,8 +1,3 @@
-set nocompatible
-
-syntax on
-filetype plugin indent on
-
 set nocompatible              " be iMproved
 filetype off                  " required!
 
@@ -17,6 +12,7 @@ Bundle 'gmarik/vundle'
 " "
 " original repos on GitHub
 Bundle 'tpope/vim-fugitive'
+Bundle 'suan/vim-instant-markdown'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
