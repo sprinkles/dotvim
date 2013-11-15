@@ -1,0 +1,3 @@
+[submodule "/Users/oira/.vim/bundle/vundle"]
+	path = /Users/oira/.vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
