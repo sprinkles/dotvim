@@ -18,6 +18,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
+Bundle 'altercation/vim-colors-solarized'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -39,7 +40,9 @@ filetype plugin indent on     " required!
 " " NOTE: comments after Bundle commands are not allowed.
 
 "" COLORS 
+syntax enable
 set bg=dark
+colorscheme solarized
 set term=linux
 
 
@@ -87,3 +90,21 @@ nmap <leader>p :set paste!<CR>
 
 "" FOLDING
 "set foldmethod=indent
+
+"" YIKES!
+" Do not use the arrow keys any more
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
+"
+" " Make arrowkey do something usefull, resize the viewports accordingly
+" nnoremap <Left> :vertical resize +5<CR>
+" nnoremap <Right> :vertical resize -5<CR>
+" nnoremap <Up> :resize +5<CR>
+" nnoremap <Down> :resize -5<CR>
+"
