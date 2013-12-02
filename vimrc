@@ -19,6 +19,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bruno-/vim-vertical-move'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
