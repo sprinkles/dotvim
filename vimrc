@@ -12,14 +12,18 @@ Bundle 'gmarik/vundle'
 " "
 " original repos on GitHub
 Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'bruno-/vim-vertical-move'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+"" COLORSCHEMES
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'bruno-/vim-vertical-move'
+Bundle 'sickill/vim-monokai'
+"" SYNTAX
+Bundle 'tpope/vim-haml'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -41,10 +45,10 @@ filetype plugin indent on     " required!
 " " NOTE: comments after Bundle commands are not allowed.
 
 "" COLORS 
-syntax enable
 set bg=dark
-colorscheme solarized
-set term=linux
+set term=$TERM
+"colorscheme monokai
+syntax on
 
 
 "" EDITOR
@@ -57,18 +61,18 @@ set smarttab      "tab inserts spaces
 set softtabstop=2 "tab key results in 2 spaces
 set tabstop=2     "tabs are 2 spaces 
 
-
 "" HELPFUL TIDBITS
 set hidden        "when a buffer is brought to foreground, remember undo history and marks
 set laststatus=2  "always show status line
 set magic         "enable extended regex
+set number        "line numbers
 set ruler         "show cursor position
 set showcmd       "display incomplete cmds 
 set showmatch     "show matching brackets
 set showmode      "display current mode
 set title         "show the filename in the title bar
 set ttyfast       "send more chars at a given time
-set wildmenu      "?  
+set wildmenu        
 set wildmode=list:full
 
 "" SEARCH
@@ -78,22 +82,17 @@ set incsearch     "highlight dynamically as pattern is typed
 set smartcase     " ...unless word includes capital letter
 set wrapscan      "make search wrap around
 
-
 "" MAPPING 
 let mapleader=','
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set number!<CR>
 nmap <leader>p :set paste!<CR>
 
-nmap <leader>n :set number!<CR>
-nmap <leader>p :set paste!<CR>
-
-
 "" FOLDING
 "set foldmethod=indent
 
-"" YIKES!
-" Do not use the arrow keys any more
+"" YIKES! -- disable arrow key nav
+"" Use with care if others are using your vimrc, whoops!
 nnoremap <up>    <nop>
 nnoremap <down>  <nop>
 nnoremap <left>  <nop>
@@ -109,3 +108,9 @@ inoremap <right> <nop>
 " nnoremap <Up> :resize +5<CR>
 " nnoremap <Down> :resize -5<CR>
 "
+"" Remember to try this again later. I'm still undecided on it
+"if exists("&relativenumber")
+"  set relativenumber
+"  au BufReadPost * set relativenumber
+"endif
+
