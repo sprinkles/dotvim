@@ -82,6 +82,14 @@ set incsearch     "highlight dynamically as pattern is typed
 set smartcase     " ...unless word includes capital letter
 set wrapscan      "make search wrap around
 
+"" SPLITS
+set splitbelow
+set splitright
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "" MAPPING 
 let mapleader=','
 nmap <leader>l :set list!<CR>
