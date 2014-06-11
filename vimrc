@@ -122,3 +122,13 @@ inoremap <right> <nop>
 "  au BufReadPost * set relativenumber
 "endif
 
+"" Drupal files
+if has("autocmd")
+  augroup module
+    autocmd!
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.theme set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    augroup END
+endif
+syntax on
