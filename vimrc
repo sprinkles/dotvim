@@ -1,38 +1,33 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
+set nocompatible              
+filetype off                 
+
+" Setting up Vundle - the vim plugin bundler
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" let Vundle manage Vundle
-" " required! 
-Bundle 'gmarik/vundle'
-"
-" My bundles here:
-" "
-" original repos on GitHub
+Bundle 'gmarik/vundle' 
 Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
-Bundle 'suan/vim-instant-markdown'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'bruno-/vim-vertical-move'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"" COLORSCHEMES
+Bundle 'ap/vim-css-color',
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sickill/vim-monokai'
-"" SYNTAX
 Bundle 'tpope/vim-haml'
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non-GitHub repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" Git repos on your local machine (i.e. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
-"
+Bundle 'bling/vim-airline'
+Bundle 'airblade/vim-gitgutter'
+""Bundle 'kien/ctrlp.vim'
+""Bundle 'suan/vim-instant-markdown'
+""Bundle 'Lokaltog/vim-easymotion'
+""Bundle 'bruno-/vim-vertical-move'
+""Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
 filetype plugin indent on     " required!
 " "
 " " Brief help
@@ -47,6 +42,7 @@ filetype plugin indent on     " required!
 "" COLORS 
 set bg=dark
 set term=$TERM
+"hi clear
 "colorscheme monokai
 syntax on
 
@@ -132,3 +128,5 @@ if has("autocmd")
     augroup END
 endif
 syntax on
+
+set shell=bash
