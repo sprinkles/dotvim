@@ -7,4 +7,4 @@ git clone git://github.com/sprinkles/dotvim ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
 ## Vundle 
-run :BundleInstall
+run :PluginInstall! (inside vim)
