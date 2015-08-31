@@ -8,9 +8,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ap/vim-css-color',
 Plugin 'sickill/vim-monokai'
 Plugin 'tpope/vim-haml'
+Plugin 'digitaltoad/vim-jade'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
-""Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -44,6 +46,7 @@ set softtabstop=2 "tab key results in 2 spaces
 set tabstop=2     "tabs are 2 spaces 
 
 "" HELPFUL TIDBITS
+set clipboard=unnamed
 set hidden        "when a buffer is brought to foreground, remember undo history and marks
 set laststatus=2  "always show status line
 set magic         "enable extended regex
@@ -116,3 +119,17 @@ endif
 syntax on
 
 set shell=bash
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+au! BufRead,BufNewFile *.jade setfiletype jade
+au! BufRead,BufNewFile *.less setfiletype less
+au! BufRead,BufNewFile *.coffee setfiletype coffee
+
+" Enable persistent undo so that if I accidentally close a file, I can still
+" " get back what I had originally.
+set undodir=~/tmp/undodir
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer
+
